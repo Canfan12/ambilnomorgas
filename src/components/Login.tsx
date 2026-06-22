@@ -41,9 +41,9 @@ export default function Login({ onLogin }: LoginProps) {
           <div className="absolute top-10 -right-10 w-40 h-40 bg-red-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 pointer-events-none"></div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 pointer-events-none"></div>
 
-          <div className="absolute top-4 right-4 z-10">
-            <div className="bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2 inline-block border border-white/10 shadow-sm text-right">
-              <CurrentTimeDisplay dark={true} inline={true} align="right" />
+          <div className="absolute top-4 left-0 w-full flex justify-center z-10 px-4">
+            <div className="bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2 inline-flex justify-center border border-white/10 shadow-sm text-center">
+              <CurrentTimeDisplay dark={true} inline={true} align="center" />
             </div>
           </div>
 

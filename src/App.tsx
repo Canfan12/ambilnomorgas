@@ -68,26 +68,26 @@ export default function App() {
     <div className="font-sans min-h-screen flex flex-col">
       {/* Universal Header - For demo testing purposes */}
       {user && (
-        <header className="bg-white text-slate-800 px-6 py-4 flex justify-between items-center shadow-sm border-b border-slate-200 border-t-4 border-t-red-500 z-50">
+        <header className="bg-white text-slate-800 px-4 sm:px-6 py-3 sm:py-4 flex flex-wrap justify-between items-center shadow-sm border-b border-slate-200 border-t-4 border-t-red-500 z-50 gap-4">
           <div className="flex items-center space-x-3">
             <div className="bg-green-500 p-2 rounded-lg text-white">
               <FlameIcon className="w-5 h-5 flex-shrink-0" />
             </div>
             <span className="text-xl font-bold tracking-tight text-blue-600">Ambil Nomor <span className="text-red-500">Gas</span></span>
           </div>
-          <div className="flex items-center space-x-6">
-            <div className="hidden md:flex flex-col text-right pr-4 border-r border-slate-200">
-              <CurrentTimeDisplay inline={true} align="right" />
+          <div className="flex items-center w-full sm:w-auto justify-between sm:justify-end space-x-0 sm:space-x-6 order-last sm:order-none bg-slate-50 sm:bg-transparent p-2 sm:p-0 rounded-lg sm:rounded-none">
+            <div className="flex flex-col text-left sm:text-right px-2 sm:pr-4 sm:border-r border-slate-200 flex-1 sm:flex-none">
+              <CurrentTimeDisplay inline={true} align="left" />
             </div>
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4 pr-2 sm:pr-0">
               <div className="text-right hidden sm:block">
-                <p className="text-xs text-slate-500 uppercase">{user.role === 'admin' ? 'Petugas/Admin' : 'Pengguna'}</p>
+                <p className="text-[10px] text-slate-500 uppercase">{user.role === 'admin' ? 'Petugas/Admin' : 'Pengguna'}</p>
                 <p className="text-sm font-bold text-slate-800">{user.name}</p>
               </div>
               <button 
                 onClick={handleLogout}
-                className="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer text-slate-600 shadow-sm"
+                className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-white sm:bg-slate-50 flex items-center justify-center border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer text-slate-600 shadow-sm"
                 title="Logout / Ganti Akun"
               >
                 <LogOut className="w-4 h-4" />
