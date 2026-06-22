@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { QueueItem, User } from './types';
 import { initialQueue } from './data';
 import Login from './components/Login';
@@ -11,6 +11,7 @@ import UserDashboard from './components/UserDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import { LogOut } from 'lucide-react';
 import { AnimatePresence } from 'motion/react';
+import CurrentTimeDisplay from './components/CurrentTimeDisplay';
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -74,18 +75,24 @@ export default function App() {
             </div>
             <span className="text-xl font-bold tracking-tight text-blue-600">Ambil Nomor <span className="text-red-500">Gas</span></span>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="text-right hidden sm:block">
-              <p className="text-xs text-slate-500 uppercase">{user.role === 'admin' ? 'Petugas/Admin' : 'Pengguna'}</p>
-              <p className="text-sm font-bold text-slate-800">{user.name}</p>
+          <div className="flex items-center space-x-6">
+            <div className="hidden md:flex flex-col text-right pr-4 border-r border-slate-200">
+              <CurrentTimeDisplay inline={true} align="right" />
             </div>
-            <button 
-              onClick={handleLogout}
-              className="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer text-slate-600"
-              title="Logout / Ganti Akun"
-            >
-              <LogOut className="w-4 h-4" />
-            </button>
+            
+            <div className="flex items-center space-x-4">
+              <div className="text-right hidden sm:block">
+                <p className="text-xs text-slate-500 uppercase">{user.role === 'admin' ? 'Petugas/Admin' : 'Pengguna'}</p>
+                <p className="text-sm font-bold text-slate-800">{user.name}</p>
+              </div>
+              <button 
+                onClick={handleLogout}
+                className="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer text-slate-600 shadow-sm"
+                title="Logout / Ganti Akun"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </header>
       )}

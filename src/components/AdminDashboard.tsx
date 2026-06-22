@@ -3,6 +3,7 @@ import { QueueItem } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface AdminDashboardProps {
+  key?: string;
   queue: QueueItem[];
   stock: number;
   totalStock: number;

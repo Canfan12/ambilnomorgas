@@ -3,6 +3,7 @@ import { QueueItem, User } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface UserDashboardProps {
+  key?: string;
   user: User;
   queue: QueueItem[];
   stock: number;
