@@ -30,7 +30,7 @@ export default function CurrentTimeDisplay({ dark = false, inline = false, align
         <span className={`text-[9px] sm:text-[10px] uppercase tracking-widest font-bold truncate ${dark ? 'text-blue-200' : 'text-slate-500'}`}>
           {dtfDate.format(time)} <span className="hidden sm:inline">-</span>
         </span>
-        <span className={`text-xs sm:text-sm font-bold font-mono tracking-wider flex-shrink-0 ${dark ? 'text-white drop-shadow-sm' : 'text-slate-800'}`}>
+        <span className={`text-[9px] sm:text-[10px] font-bold font-mono tracking-wider flex-shrink-0 ${dark ? 'text-white drop-shadow-sm' : 'text-slate-800'}`}>
           {dtfTime.format(time).replace(/\./g, ':')}
         </span>
       </div>
@@ -42,7 +42,7 @@ export default function CurrentTimeDisplay({ dark = false, inline = false, align
       <p className={`text-[10px] uppercase tracking-widest font-bold ${dark ? 'text-blue-200' : 'text-slate-500'}`}>
         {dtfDate.format(time)}
       </p>
-      <p className={`text-sm font-bold font-mono tracking-wider mt-0.5 ${dark ? 'text-white drop-shadow-sm' : 'text-slate-800'}`}>
+      <p className={`text-[10px] font-bold font-mono tracking-wider mt-0.5 ${dark ? 'text-white drop-shadow-sm' : 'text-slate-800'}`}>
         {dtfTime.format(time).replace(/\./g, ':')}
       </p>
     </div>
